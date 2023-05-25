@@ -8,7 +8,6 @@ import java.util.List;
 
 public class UserServiceTest {
     private final UserService userService = new UserServiceImpl();
-
     private final String testName = "Ivan";
     private final String testLastName = "Ivanov";
     private final byte testAge = 5;
@@ -20,6 +19,7 @@ public class UserServiceTest {
             userService.dropUsersTable();
             userService.dropUsersTable();
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             Assert.fail("При тестировании удаления таблицы произошло исключение\n" + e);
         }
     }
@@ -98,5 +98,4 @@ public class UserServiceTest {
             Assert.fail("При тестировании очистки таблицы пользователей произошло исключение\n" + e);
         }
     }
-
 }
